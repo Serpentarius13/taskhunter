@@ -4,4 +4,6 @@
   <router-view />
 </template>
 
-<style scoped></style>
+<style scoped>
+@import "@/assets/scss/animations.scss";
+</style>
