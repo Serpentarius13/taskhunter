@@ -6,9 +6,9 @@ class Cookies {
    * Достает куку по ключу
    *
    * @param key Ключ куки
-   * @returns Значение куки или undefined
+   * @returns Значение куки или null
    */
-  getCookie(key: string): string | undefined {
+  getCookie(key: string): string | null {
     return cookie.get(key);
   }
   /**
@@ -48,9 +48,9 @@ class Cookies {
   /**
    * Получает куку токена авторизации
    *
-   * @returns Возвращает значение куки auth_token
+   * @returns Возвращает значение куки auth_token или null
    */
-  getAuthCookie(): string | undefined {
+  getAuthCookie(): string | null {
     return this.getCookie("auth_token");
   }
 

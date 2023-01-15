@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import vue from "@vitejs/plugin-vue";
 
 import { fileURLToPath, URL } from "url";
@@ -11,5 +11,8 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "~": fileURLToPath(new URL("./", import.meta.url)),
     },
+  },
+  test: {
+    environment: "jsdom",
   },
 });
