@@ -6,3 +6,4 @@
 - Pinia
 - Zod (for validation and TypeScript)
 - Vitest
+- Vue Cookies
