@@ -32,14 +32,3 @@
 .fade-leave-to {
   opacity: 0;
 }
-
-.modalFade-enter-active,
-.modalFade-leave-active {
-  transition: all 0.15s ease-out;
-}
-
-.modalFade-enter-from,
-.modalFade-leave-to {
-  opacity: 0;
-  transform: translateY(-3rem);
-}
