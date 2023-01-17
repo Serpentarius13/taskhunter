@@ -35,7 +35,7 @@ const closeModalWindow = (event: MouseEvent | any) => {
 };
 
 //* Ref to handle click outside
-const boxRef: Ref<HTMLDivElement | null> = shallowRef(null);
+const boxRef: Ref<HTMLDivElement | null> = ref(null);
 
 //* Modal state with shallowRef to prevent re-renders
 const modalState: Ref<IStoreProps | null> = shallowRef(null);
