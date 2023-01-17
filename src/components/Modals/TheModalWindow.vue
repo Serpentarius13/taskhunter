@@ -42,7 +42,7 @@ const modalState: Ref<IStoreProps | null> = shallowRef(null);
 
 //* Subscribe to store to watch modal state being mutated from other components and adding event listener for Escape keydown close
 onMounted(() => {
-  store.$onAction(({ store }) => {
+  store.$subscribe(() => {
     modalState.value = store.$state.modalState;
   });
   document.addEventListener("keydown", (event) => {
