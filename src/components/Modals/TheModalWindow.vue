@@ -7,7 +7,7 @@
         v-if="modalState?.component"
       >
         <div ref="boxRef">
-          <component :is="modalState?.component" v-bind="modalState?.props" />
+          <component :is="{...modalState?.component}" v-bind="modalState?.props" />
         </div>
       </div>
     </Transition>
@@ -35,7 +35,7 @@ const closeModalWindow = (event: MouseEvent | any) => {
 };
 
 //* Ref to handle click outside
-const boxRef: Ref<HTMLDivElement | null> = ref(null);
+const boxRef: Ref<HTMLDivElement | null> = shallowRef(null);
 
 //* Modal state with shallowRef to prevent re-renders
 const modalState: Ref<IStoreProps | null> = shallowRef(null);
