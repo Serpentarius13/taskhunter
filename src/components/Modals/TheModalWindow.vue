@@ -1,13 +1,9 @@
 <template>
   <Teleport to="body">
     <Transition name="modalFade">
-      <div
-        class="modal-wrapper"
-        @click="closeModalWindow"
-        v-if="modalState?.component"
-      >
+      <div class="modal-wrapper" @click="closeModalWindow" v-if="modalState?.component">
         <div ref="boxRef">
-          <component :is="{...modalState?.component}" v-bind="modalState?.props" />
+          <component :is="{ ...modalState?.component }" v-bind="modalState?.props" />
         </div>
       </div>
     </Transition>
@@ -43,7 +39,8 @@ const modalState: Ref<IStoreProps | null> = shallowRef(null);
 //* Subscribe to store to watch modal state being mutated from other components and adding event listener for Escape keydown close
 onMounted(() => {
   store.$subscribe(() => {
-    modalState.value = store.$state.modalState;
+    if (modalState.value != store.$state.modalState) modalState.value = store.$state.modalState;
+
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeModal();
