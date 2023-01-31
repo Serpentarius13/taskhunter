@@ -1,3 +1,5 @@
+require("@rushstack/eslint-patch/modern-module-resolution");
+
 module.exports = {
   env: {
     browser: true,
@@ -8,7 +10,9 @@ module.exports = {
     "eslint:recommended",
     "plugin:vue/vue3-essential",
     "plugin:@typescript-eslint/recommended",
+    "@vue/eslint-config-airbnb",
   ],
+
   overrides: [],
   parser: "vue-eslint-parser",
   parserOptions: {
@@ -24,5 +28,10 @@ module.exports = {
   rules: {
     "@typescript-eslint/ban-ts-comment": "off",
     "vue/prefer-import-from-vue": "off",
+    quotes: "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "object-curly-newline": "off",
   },
 };

@@ -13,4 +13,4 @@ const createApi = (isAuth: boolean) =>
     },
   });
 
-export default createApi
+export default createApi;

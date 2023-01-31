@@ -1,4 +1,4 @@
-import { watch,  Ref, isRef, onMounted, onBeforeUnmount, unref } from "vue";
+import { watch, Ref, isRef, onMounted, onBeforeUnmount, unref } from "vue";
 
 export default function useEventListener(
   // the target could be reactive ref which adds flexibility
