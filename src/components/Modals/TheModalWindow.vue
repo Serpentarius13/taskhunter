@@ -1,9 +1,16 @@
 <template>
   <Teleport to="body">
     <Transition name="modalFade">
-      <div class="modal-wrapper" @click="closeModalWindow" v-if="modalState?.component">
+      <div
+        class="modal-wrapper"
+        @click="closeModalWindow"
+        v-if="modalState?.component"
+      >
         <div ref="boxRef">
-          <component :is="{ ...modalState?.component }" v-bind="modalState?.props" />
+          <component
+            :is="{ ...modalState?.component }"
+            v-bind="modalState?.props"
+          />
         </div>
       </div>
     </Transition>
@@ -14,6 +21,7 @@
 import { ref, onMounted, onUnmounted, shallowRef, Ref } from "vue";
 import useModalStore from "../../store/useModalStore";
 import { IStoreProps } from "@/types/modal";
+import useEventListener from "@/composables/useEventListener";
 
 const store = useModalStore();
 
@@ -36,25 +44,18 @@ const boxRef: Ref<HTMLDivElement | null> = ref(null);
 //* Modal state with shallowRef to prevent re-renders
 const modalState: Ref<IStoreProps | null> = shallowRef(null);
 
-//* Subscribe to store to watch modal state being mutated from other components and adding event listener for Escape keydown close
 onMounted(() => {
+  //* Subscribe to store to watch modal state being mutated from other components and adding event listener for Escape keydown close
   store.$subscribe(() => {
-    if (modalState.value != store.$state.modalState) modalState.value = store.$state.modalState;
-
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeModal();
+    if (modalState.value != store.$state.modalState)
+      modalState.value = store.$state.modalState;
   });
 });
 
-//* Remove event listener and close modal to be sure
-onUnmounted(() => {
-  document.removeEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeModal();
-  });
-
-  closeModal();
-});
+const handleKeyEscape = (event: KeyboardEvent) => {
+  if (event.key === "Escape") closeModal();
+};
+useEventListener(document, "keydown", handleKeyEscape);
 </script>
 
 <style lang="scss" scoped>
