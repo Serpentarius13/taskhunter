@@ -1,20 +1,25 @@
-import { describe, expect, it } from "vitest";
-import storage from "./localStorage";
+import { describe, expect, it } from 'vitest';
+import {
+  getFromLocalStorage,
+  isKeyExistInLocalStorage,
+  setToLocalStorage,
+  removeFromLocalStorage,
+} from './localStorage';
 
-describe("localStorage", () => {
-  const key = "test";
-  it("should be null at the beginning", () => {
-    expect(storage.getFromLocalStorage(key)).toBe(null);
+describe('localStorage', () => {
+  const key = 'test';
+  it('should be null at the beginning', () => {
+    expect(getFromLocalStorage(key)).toBe(null);
   });
-  it("should not exist at the beginning", () => {
-    expect(storage.isKeyExistInLocalStorage(key)).toBe(false);
+  it('should not exist at the beginning', () => {
+    expect(isKeyExistInLocalStorage(key)).toBe(false);
   });
-  it("should add to local storage", () => {
-    storage.setToLocalStorage(key, "test");
-    expect(storage.getFromLocalStorage(key)).toBe("test");
+  it('should add to local storage', () => {
+    setToLocalStorage(key, 'test');
+    expect(getFromLocalStorage(key)).toBe('test');
   });
-  it("should be removable", () => {
-    storage.removeFromLocalStorage(key);
-    expect(storage.getFromLocalStorage(key)).toBe(null);
+  it('should be removable', () => {
+    removeFromLocalStorage(key);
+    expect(getFromLocalStorage(key)).toBe(null);
   });
 });

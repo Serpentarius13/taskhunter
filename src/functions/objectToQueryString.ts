@@ -1,19 +1,12 @@
-function objectToStringQueryParams(params: { [key: string]: any }) {
-  const queryParams = ["?"];
-  const paramsLength = Object.keys(params).length;
+export default function objectToStringQueryParams(params: {
+  [key: string]: unknown;
+}) {
+  const queryParams = ['?'];
 
-  let iterator = 0;
-  for (const key in params) {
-    if (Object.hasOwnProperty.call(params, key)) {
-      paramsLength - 1 <= iterator
-        ? queryParams.push(`${key}=${params[key]}`)
-        : queryParams.push(`${key}=${params[key]}&`);
-    }
+  Object.keys(params).forEach((key) => {
+    const queryString = `${key}=${params[key]}`;
+    queryParams.push(queryString);
+  });
 
-    iterator = iterator + 1;
-  }
-
-  return queryParams.join("");
+  return queryParams.join('');
 }
-
-export { objectToStringQueryParams };

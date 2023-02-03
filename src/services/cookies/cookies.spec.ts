@@ -1,23 +1,23 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import { getAuth, clearAuth, setAuth } from "./cookies";
+import { describe, it, expect, beforeEach } from 'vitest';
+import { clearAuthCookie, getAuthCookie, setAuthCookie } from './cookies';
 
-describe("cookies", () => {
+describe('cookies', () => {
   beforeEach(() => {
-    clearAuth();
+    clearAuthCookie();
   });
-  it("should be null at the beginning", () => {
-    expect(getAuth()).toBe(null);
+  it('should be null at the beginning', () => {
+    expect(getAuthCookie()).toBe(null);
   });
-  it("should change value with setAuth", () => {
-    expect(getAuth()).toBe(null);
-    setAuth("test");
+  it('should change value with setAuth', () => {
+    expect(getAuthCookie()).toBe(null);
+    setAuthCookie('test');
 
-    expect(getAuth()).toBe("test");
+    expect(getAuthCookie()).toBe('test');
   });
-  it("should clear itself with clearAuth", () => {
-    expect(getAuth()).toBe(null);
-    setAuth("test");
-    clearAuth();
-    expect(getAuth()).toBe(null);
+  it('should clear itself with clearAuth', () => {
+    expect(getAuthCookie()).toBe(null);
+    setAuthCookie('test');
+    clearAuthCookie();
+    expect(getAuthCookie()).toBe(null);
   });
 });

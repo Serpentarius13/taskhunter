@@ -1,8 +1,8 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-import { IStoreProps, IStoreState } from "@/types/modal";
+import { IStoreProps, IStoreState } from '@/types/modal';
 
-const useModalStore = defineStore("modalStore", {
+const useModalStore = defineStore('modalStore', {
   state: (): IStoreState => ({
     modalState: { component: null, props: {} },
   }),
@@ -13,9 +13,9 @@ const useModalStore = defineStore("modalStore", {
     openModal(payload: IStoreProps) {
       const { props, component } = payload;
 
-      const docElement = document.querySelector("body");
+      const docElement = document.querySelector('body');
 
-      if (docElement) docElement.style.overflow = "hidden";
+      if (docElement) docElement.style.overflow = 'hidden';
 
       this.modalState = { component, props: props || {} };
     },
@@ -26,9 +26,9 @@ const useModalStore = defineStore("modalStore", {
     closeModal() {
       const basicState: IStoreProps = { component: null, props: {} };
       this.modalState = basicState;
-      const docElement = document.querySelector("body");
+      const docElement = document.querySelector('body');
 
-      if (docElement) docElement.style.overflow = "auto";
+      if (docElement) docElement.style.overflow = 'auto';
     },
   },
 });
