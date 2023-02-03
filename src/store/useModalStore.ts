@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 
-import { IStoreProps, IStoreState } from '@/types/modal';
+import { IStoreProps, IStoreState } from '@/constants/types/modal';
 
 const useModalStore = defineStore('modalStore', {
   state: (): IStoreState => ({

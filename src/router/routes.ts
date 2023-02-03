@@ -4,14 +4,14 @@ interface IRoute {
   path: string;
   component: unknown;
   name?: string;
-  meta?: RouteMeta
+  meta?: RouteMeta;
 }
 
 const routes: IRoute[] = [
-  { path: '/', component: () => import('@/views/PageHome.vue'), name: 'Home' },
+  { path: '/', component: () => import('@/pages/PageHome.vue'), name: 'Home' },
   {
     path: '/test',
-    component: () => import('@/views/PageTest.vue'),
+    component: () => import('@/pages/PageTest.vue'),
     name: 'Test',
   },
 ];

@@ -1,16 +1,9 @@
 <template>
   <Teleport to="body">
     <Transition name="modalFade">
-      <div
-        class="modal-wrapper"
-        @click="closeModalWindow"
-        v-if="modalState?.component"
-      >
+      <div class="modal-wrapper" @click="closeModalWindow" v-if="modalState?.component">
         <div ref="boxRef">
-          <component
-            :is="{ ...modalState?.component }"
-            v-bind="modalState?.props"
-          />
+          <component :is="{ ...modalState?.component }" v-bind="modalState?.props" />
         </div>
       </div>
     </Transition>
@@ -20,8 +13,8 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, shallowRef, Ref } from "vue";
 import useModalStore from "../../store/useModalStore";
-import { IStoreProps } from "@/types/modal";
-import useEventListener from "@/composables/useEventListener";
+import { IStoreProps } from "@/constants/types/modal";
+import useEventListener from "@/features/composables/useEventListener";
 
 const store = useModalStore();
 

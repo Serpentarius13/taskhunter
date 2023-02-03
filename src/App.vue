@@ -5,5 +5,5 @@
 <script setup lang="ts"></script>
 
 <style scoped>
-@import "@/assets/scss/animations.scss";
+@import "~/public/assets/scss/animations.scss";
 </style>
