@@ -11,6 +11,7 @@ module.exports = {
     'plugin:vue/vue3-essential',
     'plugin:@typescript-eslint/recommended',
     '@vue/eslint-config-airbnb',
+    'plugin:cypress/recommended',
   ],
 
   overrides: [],
@@ -24,7 +25,7 @@ module.exports = {
       '<template>': 'espree',
     },
   },
-  plugins: ['vue', '@typescript-eslint'],
+  plugins: ['vue', '@typescript-eslint', 'cypress'],
   rules: {
     '@typescript-eslint/ban-ts-comment': 'off',
     'vue/prefer-import-from-vue': 'off',
