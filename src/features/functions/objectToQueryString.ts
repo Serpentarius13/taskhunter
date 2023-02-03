@@ -1,12 +1,12 @@
 export default function objectToStringQueryParams(params: {
   [key: string]: unknown;
-}) {
-  const queryParams = ['?'];
+}): string {
+  let queryParams = '?';
 
-  Object.keys(params).forEach((key) => {
+  Object.keys(params).forEach(key => {
     const queryString = `${key}=${params[key]}`;
-    queryParams.push(queryString);
+    queryParams += queryString;
   });
 
-  return queryParams.join('');
+  return queryParams;
 }
