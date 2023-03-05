@@ -1,2 +1,29 @@
 @layer components {
+  .smallBtn-green {
+    @include smallBtn();
+
+    @apply bg-mainGreen;
+
+    &:hover {
+      @apply bg-mainGreenLight;
+    }
+
+    &:active {
+      @apply bg-mainGreenDark;
+    }
+  }
+
+  .smallBtn-blue {
+    @include smallBtn();
+
+    @apply bg-mainBlue;
+
+    &:hover {
+      @apply bg-mainBlueLight;
+    }
+
+    &:active {
+      @apply bg-mainBlueDark;
+    }
+  }
 }

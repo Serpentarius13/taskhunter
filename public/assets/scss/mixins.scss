@@ -1,47 +1,5 @@
-@mixin ltPhone {
-  @media (max-width: 600px) {
-    @content;
-  }
-}
 
-@mixin gtPhone {
-  @media (min-width: 600px) {
-    @content;
-  }
-}
-
-@mixin gtTabletBig {
-  @media (min-width: 900px) {
-    @content;
-  }
-}
-
-@mixin ltTabletBig {
-  @media (max-width: 900px) {
-    @content;
-  }
-}
-
-@mixin gtDesktop {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin ltDesktop {
-  @media (max-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin gtBigDesktop {
-  @media (min-width: 1800px) {
-    @content;
-  }
-}
-
-@mixin ltBigDesktop {
-  @media (max-width: 1800px) {
-    @content;
-  }
+@mixin smallBtn {
+    padding: 0.8rem 1.5rem;
+    transition: 0.2s ease;
 }

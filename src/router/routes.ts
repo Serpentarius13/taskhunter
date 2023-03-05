@@ -2,7 +2,7 @@ import { RouteMeta } from 'vue-router';
 
 interface IRoute {
   path: string;
-  component: unknown;
+  component: any;
   name?: string;
   meta?: RouteMeta;
 }

@@ -9,6 +9,8 @@ declare module '*.vue' {
   export default component;
 }
 
+declare module '*.vue';
+
 declare module 'vue-router' {
   interface RouteMeta {
     isPublic?: boolean;
@@ -16,5 +18,3 @@ declare module 'vue-router' {
     requiresAuth?: boolean;
   }
 }
-
-

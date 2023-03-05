@@ -1,9 +1,0 @@
-{
-  "trailingComma": "all",
-  "singleQuote": true,
-  "endOfLine": "lf",
-  "bracketSameLine": false,
-  "arrowParens": "avoid",
-  "parser": "typescript",
-  "singleAttributePerLine": true
-}

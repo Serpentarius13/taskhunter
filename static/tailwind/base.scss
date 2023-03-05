@@ -1,2 +1,12 @@
 @layer base {
+
+    .container {
+        @apply max-w-[120rem] mx-auto w-full
+    }
+
+    .button {
+        @apply text-white;
+        padding: 0.85rem 1.5rem;
+        
+    }
 }
