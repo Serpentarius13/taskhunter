@@ -13,8 +13,6 @@
 </template>
 
 <script setup>
-import TheLoginButton from "../Buttons/TheLoginButton.vue";
-import TheRegistrationButton from "../Buttons/TheRegistrationButton.vue";
 import BaseNavLogo from "./BaseNavLogo.vue";
 import TheMobileNav from "./TheMobileNav.vue";
 import TheNavButtons from "./TheNavButtons.vue";
