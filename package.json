@@ -11,9 +11,11 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
+    "@babel/types": "^7.21.2",
     "@rushstack/eslint-patch": "^1.2.0",
     "@vue/eslint-config-airbnb": "^7.0.0",
     "axios": "^1.2.2",
+    "cypress": "^12.7.0",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-cookies": "^1.8.2",
@@ -26,7 +28,6 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitest/coverage-c8": "^0.29.2",
     "autoprefixer": "^10.4.13",
-    "cypress": "^12.5.1",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-vue": "^9.9.0",
