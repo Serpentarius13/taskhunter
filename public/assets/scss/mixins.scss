@@ -1,5 +1,8 @@
+@mixin transition-fast {
+  transition: 0.2s all ease;
+}
 
 @mixin smallBtn {
-    padding: 0.8rem 1.5rem;
-    transition: 0.2s ease;
+  padding: 0.8rem 1.5rem;
+  @include transition-fast();
 }

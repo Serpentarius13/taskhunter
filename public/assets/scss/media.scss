@@ -28,6 +28,12 @@
   }
 }
 
+@mixin ltSmallDesktop {
+  @media (max-width: 1066px) {
+    @content;
+  }
+}
+
 @mixin ltDesktop {
   @media (max-width: 1200px) {
     @content;

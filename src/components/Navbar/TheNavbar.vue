@@ -1,51 +1,47 @@
 <template>
-    <nav class="container nav__container">
+  <nav class="container big nav__container">
+    <div class="nav__left">
+      <BaseNavLogo />
 
-        <div class="nav__left">
-            <BaseNavLogo />
+      <TheNavLinks class="nav__links" />
+    </div>
 
-            <TheNavLinks/>
-        </div>
+    <TheNavButtons />
+  </nav>
 
-        <div class="nav__right">
-            <TheRegistrationButton/>
-            <TheLoginButton/>
-         
-        
-            
-        </div>
-      
-    </nav>
+  <TheMobileNav class="small" />
 </template>
 
 <script setup>
-
-import TheLoginButton from '../Buttons/TheLoginButton.vue';
-import TheRegistrationButton from '../Buttons/TheRegistrationButton.vue';
-import BaseNavLogo from './BaseNavLogo.vue';
-import TheNavLinks from './TheNavLinks.vue';
-
-
-
+import TheLoginButton from "../Buttons/TheLoginButton.vue";
+import TheRegistrationButton from "../Buttons/TheRegistrationButton.vue";
+import BaseNavLogo from "./BaseNavLogo.vue";
+import TheMobileNav from "./TheMobileNav.vue";
+import TheNavButtons from "./TheNavButtons.vue";
+import TheNavLinks from "./TheNavLinks.vue";
 </script>
 
 <style lang="scss" scoped>
-
-
 .nav {
-    &__container {
-        @apply flex justify-between py-[0.5rem];
-        min-height: 3.6rem;
-        
-    }
+  &__container {
+    @apply flex justify-between py-[0.5rem];
+    min-height: 3.6rem;
+  }
 
-    &__left {
-        @apply flex items-center gap-veryBig;
-    }
-
-    &__right {
-        @apply flex items-center gap-medium;
-    }
+  &__left {
+    @apply flex items-center gap-veryBig;
+  }
 }
 
+.small {
+  @include ltSmallDesktop {
+    display: flex;
+  }
+}
+
+.big {
+  @include ltSmallDesktop {
+    display: none;
+  }
+}
 </style>
