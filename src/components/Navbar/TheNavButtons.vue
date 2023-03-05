@@ -1,13 +1,13 @@
 <template>
   <div class="nav__buttons">
-    <TheRegistrationButton />
-    <TheLoginButton />
+    <TheRegistrationLink />
+    <TheLoginLink />
   </div>
 </template>
 
 <script setup lang="ts">
-import TheRegistrationButton from "../Buttons/TheRegistrationButton.vue";
-import TheLoginButton from "../Buttons/TheLoginButton.vue";
+import TheRegistrationLink from "../Links/TheRegistrationLink.vue";
+import TheLoginLink from "../Links/TheLoginLink.vue";
 </script>
 
 <style scoped lang="scss">

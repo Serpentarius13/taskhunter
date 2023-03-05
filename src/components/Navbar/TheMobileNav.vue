@@ -3,8 +3,8 @@
     <div class="nav__mobile-links__link">
       <TheNavLinks class="nav__mobile-links__link-link" />
       <div>
-        <TheRegistrationButton />
-        <TheLoginButton />
+        <TheRegistrationLink />
+        <TheLoginLink />
       </div>
     </div>
   </div>
@@ -26,9 +26,8 @@
 import { computed, ref } from "vue";
 import BaseNavLogo from "./BaseNavLogo.vue";
 import TheNavLinks from "./TheNavLinks.vue";
-import TheLoginButton from "../Buttons/TheLoginButton.vue";
-import TheRegistrationButton from "../Buttons/TheRegistrationButton.vue";
-
+import TheLoginLink from "../Links/TheLoginLink.vue";
+import TheRegistrationLink from "../Links/TheRegistrationLink.vue";
 const isMenuShowing = ref<boolean>(false);
 
 const menuStyle = computed<{ transform: string }>(() => {

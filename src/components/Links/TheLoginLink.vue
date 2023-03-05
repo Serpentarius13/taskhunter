@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import BaseIconButton from "./Template/BaseIconButton.vue";
+import BaseIconButton from "./Template/BaseIconLink.vue";
 </script>
 
 <style lang="scss" scoped></style>
