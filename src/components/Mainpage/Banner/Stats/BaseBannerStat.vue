@@ -1,5 +1,5 @@
 <template>
-  <li class="stat__wrapper">
+  <li class="stat__item">
     <p class="stat__text">{{ name }}</p>
     <p class="stat__count">{{ count }}</p>
   </li>
@@ -16,7 +16,7 @@ defineProps<IProps>();
 
 <style lang="scss" scoped>
 .stat {
-  &__wrapper {
+  &__item {
     
     min-height: 6rem;
     @apply flex gap-medium items-center justify-between text-white text-2xl w-full;

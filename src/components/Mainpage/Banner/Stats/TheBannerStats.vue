@@ -1,7 +1,10 @@
 <template>
-  <ul class="stat__list">
-    <BaseBannerStat v-for="(stat, ix) in stats" :key="ix" v-bind="stat" />
-  </ul>
+  <div class="stat__wrapper">
+    <h2>Ежедневная статистика сервиса</h2>
+    <ul class="stat__list">
+      <BaseBannerStat v-for="(stat, ix) in stats" :key="ix" v-bind="stat" />
+    </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -18,8 +21,30 @@ const stats: Stat[] = [
 <style lang="scss" scoped>
 .stat {
   &__list {
-    @apply w-full flex flex-col items-center justify-center;
-    max-width: 58rem;
+    @apply flex flex-col items-center justify-center;
+
+
+
+    li {
+      @apply border-b-mainBlueLight border-b-[1px];
+
+      &:last-child {
+        border-bottom: 0px;
+      }
+    }
+  }
+
+  &__wrapper {
+    @apply flex flex-col;
+    max-width: max(58rem, 60%);
+    gap: 1.8rem;
+
+
+
+    h2 {
+      @apply text-2xl text-white font-normal;
+      letter-spacing: 2.5px;
+    }
   }
 }
 </style>

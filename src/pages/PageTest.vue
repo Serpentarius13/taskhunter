@@ -1,12 +1,11 @@
 <template>
   <div class="w">
-    <TheBannerStats />
+    <TheBanner />
   </div>
 </template>
 
 <script setup lang="ts">
-import BaseBannerStat from "@/components/Mainpage/Banner/Stats/BaseBannerStat.vue";
-import TheBannerStats from "@/components/Mainpage/Banner/Stats/TheBannerStats.vue";
+import TheBanner from "@/components/Mainpage/Banner/TheBanner.vue";
 </script>
 
 <style scoped>

@@ -1,8 +1,12 @@
+$mainBlue: #0569FF;
+$mainBlueOpacited: rgba(5, 105, 255, 0.42);
+
 @mixin transition-fast {
   transition: 0.2s all ease;
 }
 
 @mixin smallBtn {
   padding: 0.8rem 1.5rem;
+  border-radius: 3rem;
   @include transition-fast();
 }

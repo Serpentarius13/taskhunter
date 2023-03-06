@@ -11,13 +11,13 @@
 }
 
 @mixin gtTabletBig {
-  @media (min-width: 900px) {
+  @media (min-width: 960px) {
     @content;
   }
 }
 
 @mixin ltTabletBig {
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     @content;
   }
 }

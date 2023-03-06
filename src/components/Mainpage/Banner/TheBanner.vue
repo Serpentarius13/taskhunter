@@ -1,0 +1,75 @@
+<template>
+  <section class="banner__wrapper">
+    <div class="banner__inner">
+      <div class="banner__inner-left">
+        <h2 class="banner__inner-left-title">
+          TASKHUNTER - это сервис поиска потенциальных клиентов по определенным
+          тематикам
+        </h2>
+        <p class="banner__inner-left-subtitle">
+          Все, что вам нужно – просто описать задачу, выбрать исполнителя из
+          откликнувшихся фрилансеров и принять результат работы. Остальное мы
+          берем на себя.
+        </p>
+        <div class="banner__inner-left__bottom">
+          <p class="banner__inner-left__bottom-text">
+            для начала пользования сервисом, пройдите бесплатную регистрацию.
+            <br />
+            это займет не более одной минуты!
+          </p>
+          <TheRegistrationLink />
+        </div>
+      </div>
+
+      <TheBannerStats />
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+import TheRegistrationLink from "@/components/Links/TheRegistrationLink.vue";
+import TheBannerStats from "./Stats/TheBannerStats.vue";
+</script>
+
+<style lang="scss" scoped>
+.banner {
+  &__wrapper {
+    @apply w-full flex items-center justify-center;
+    min-height: 50rem;
+
+    background: linear-gradient(90deg, $mainBlue, $mainBlueOpacited);
+  }
+
+  &__inner {
+    @apply flex w-full items-center justify-between text-white gap-mediumSmall;
+    max-width: min(80vw, 150rem);
+
+    @include ltTabletBig {
+      @apply flex-col p-8 items-start;
+    }
+
+    &-left {
+      @apply flex flex-col gap-mediumSmall;
+      max-width: 73.7rem;
+
+      &-title {
+        @apply text-3xl text-medium font-bold;
+
+        line-height: 1.2;
+      }
+
+      &-subtitle {
+        @apply text-lg;
+      }
+      &__bottom {
+        @apply flex justify-between;
+
+        &-text {
+          @apply font-bold uppercase;
+          max-width: min(54rem, 50%);
+        }
+      }
+    }
+  }
+}
+</style>
