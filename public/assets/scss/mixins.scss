@@ -17,6 +17,10 @@ $mainGreen: #43b933;
 
 @mixin sectionPadding {
   @apply pr-4 pl-4;
+
+  @include ltPhone {
+    @apply pr-2 pl-2;
+  }
 }
 
 @mixin shadowy {

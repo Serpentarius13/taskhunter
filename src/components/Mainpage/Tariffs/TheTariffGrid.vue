@@ -1,31 +1,20 @@
 <template>
-  <section class="tariff__wrapper container-wrapper">
-    <h2 class="section-title">Наши цены и тарифы на использование сервиса</h2>
-
+  <BaseSection title="Наши цены и тарифы на использование сервиса">
     <div class="tariff__grid">
       <BaseTariffCard v-for="(item, ix) in Array.from(Array(4))" :key="ix" />
     </div>
-  </section>
+  </BaseSection>
 </template>
 
 <script setup lang="ts">
+import BaseSection from "../BaseSection.vue";
 import BaseTariffCard from "./BaseTariffCard.vue";
 </script>
 
 <style scoped lang="scss">
 .tariff {
-  &__wrapper {
-    @apply flex flex-col items-center gap-medium;
-
-    h2 {
-      @apply self-start;
-    }
-
-    @include sectionPadding;
-  }
-
   &__grid {
-    @apply grid w-[115%]  place-items-center gap-2.5;
+    @apply grid w-[115%]  place-items-center gap-4;
 
     max-width: 98vw;
 

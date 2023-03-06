@@ -31,6 +31,7 @@
 <script setup lang="ts">
 import TheRegistrationLink from "@/components/Links/TheRegistrationLink.vue";
 import TheBannerStats from "./Stats/TheBannerStats.vue";
+import BaseSection from "../BaseSection.vue";
 </script>
 
 <style lang="scss" scoped>

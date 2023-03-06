@@ -32,7 +32,7 @@ const isMenuShowing = ref<boolean>(false);
 
 const menuStyle = computed<{ transform: string }>(() => {
   if (isMenuShowing.value) return { transform: "translateX(0)" };
-  else return { transform: "translateX(-100vw)" };
+  else return { transform: "translateX(-150vw)" };
 });
 
 function handleMenu(): void {

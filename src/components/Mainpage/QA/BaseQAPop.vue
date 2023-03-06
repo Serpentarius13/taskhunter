@@ -7,7 +7,7 @@
       </div>
 
       <Transition>
-        <p class="qa__answer" v-if="isShowingAnswer">
+        <p class="qa__answer" v-if="selected">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
           inventore, accusamus cumque suscipit aut unde corrupti quod molestias
           quisquam ipsum facilis autem animi veritatis nihil, fuga eum molestiae
@@ -21,19 +21,25 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 
-const isShowingAnswer = ref<boolean>(false);
+interface IProps {
+  selected: boolean;
+  ix: number;
+}
+const props = defineProps<IProps>();
+
+const emit = defineEmits(["select"]);
 
 const plusStyleComputed = computed(() => {
-  if (isShowingAnswer.value) return { transform: "rotate(360deg)" };
+  if (props.selected) return { transform: "rotate(360deg)" };
   else return { transform: "rotate(0deg)" };
 });
 const borderComputed = computed(() => {
-  if (isShowingAnswer.value) return { borderRadius: "1rem 1rem 0 0" };
+  if (props.selected) return { borderRadius: "1rem 1rem 0 0" };
   else return { borderRadius: "1rem" };
 });
 
 function handleClick(): void {
-  isShowingAnswer.value = !isShowingAnswer.value;
+  emit("select", props.ix);
 }
 </script>
 
@@ -50,14 +56,14 @@ function handleClick(): void {
 
     grid-template-columns: 3fr 0.1fr;
 
+    padding: 2rem 1rem;
+
     @include shadowy;
 
     @include transition-fast;
 
-    padding: 2rem 1rem;
-
     span {
-      text-align: start;
+      @apply text-start;
     }
 
     &-img {
@@ -67,11 +73,15 @@ function handleClick(): void {
       span {
         @include transition-fast;
       }
+
+      @include ltPhoneSmall {
+        @apply text-lg;
+      }
     }
   }
 
   &__answer {
-    @apply text-start absolute w-full bottom-0 left-0 translate-y-full bg-white rounded-2xl rounded-t-none p-2;
+    @apply text-start absolute w-full bottom-0 left-0 translate-y-full bg-white rounded-2xl rounded-t-none p-2 z-10;
     @include shadowy;
 
     padding: 1rem;
