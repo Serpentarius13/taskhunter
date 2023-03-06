@@ -16,9 +16,10 @@ module.exports = {
       },
 
       gap: {
-        medium: "2.4rem",
+        small: "2.4rem",
         veryBig: "7rem",
-        small: "1.5rem",
+        verySmall: "1.5rem",
+        medium: "5.5rem",
       },
       colors: {
         mainGreen: "#14A800",
@@ -28,8 +29,6 @@ module.exports = {
         mainBlue: "#0569FF",
         mainBlueDark: "#0454cc",
       },
-
-  
     },
   },
   plugins: [],

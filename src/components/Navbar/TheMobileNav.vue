@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import BaseNavLogo from "./BaseNavLogo.vue";
-import TheNavLinks from "./TheNavLinks.vue";
+import TheNavLinks from "./Links/TheNavLinks.vue";
 import TheLoginLink from "../Links/TheLoginLink.vue";
 import TheRegistrationLink from "../Links/TheRegistrationLink.vue";
 const isMenuShowing = ref<boolean>(false);

@@ -1,11 +1,8 @@
 <template>
   <ul class="nav__links">
-    <BaseNavLink
-      v-for="(link, ix) in links"
-      :key="ix"
-      :text="link.text"
-      :toRoute="link.to"
-    />
+    <li v-for="(link, ix) in links" :key="ix">
+      <BaseNavLink :text="link.text" :toRoute="link.to" />
+    </li>
   </ul>
 </template>
 

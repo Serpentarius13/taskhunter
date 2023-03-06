@@ -1,9 +1,7 @@
 <template>
-  <li>
-    <router-link class="nav__link" :to="toRoute">
-      {{ text }}
-    </router-link>
-  </li>
+  <router-link class="nav__link" :to="toRoute">
+    {{ text }}
+  </router-link>
 </template>
 
 <script setup lang="ts">

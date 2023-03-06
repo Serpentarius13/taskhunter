@@ -16,7 +16,7 @@ defineProps<IProps>();
 <style lang="scss" scoped>
 .btn-contents {
   &__wrapper {
-    @apply flex gap-small items-center;
+    @apply flex gap-verySmall items-center;
 
     img {
       width: 1.8rem;

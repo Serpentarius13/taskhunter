@@ -16,7 +16,7 @@
 import BaseNavLogo from "./BaseNavLogo.vue";
 import TheMobileNav from "./TheMobileNav.vue";
 import TheNavButtons from "./TheNavButtons.vue";
-import TheNavLinks from "./TheNavLinks.vue";
+import TheNavLinks from "./Links/TheNavLinks.vue";
 </script>
 
 <style lang="scss" scoped>
