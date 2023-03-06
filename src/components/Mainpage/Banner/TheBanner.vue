@@ -40,7 +40,13 @@ import TheBannerStats from "./Stats/TheBannerStats.vue";
     @apply w-full flex items-center justify-center;
     min-height: 50rem;
 
-    background: linear-gradient(90deg, $mainBlue, $mainBlueOpacited);
+    background: linear-gradient(
+        90deg,
+        $mainBlueDark 0%,
+        $mainBlueOpacited 65%,
+        $mainBlue 98%
+      ),
+      url("/img/banner-bg.jpg") 55% / cover;
   }
 
   &__inner {

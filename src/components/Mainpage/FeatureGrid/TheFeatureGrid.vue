@@ -22,9 +22,9 @@ import BaseFeatureGridCard from "./BaseFeatureGridCard.vue";
     @apply flex flex-col gap-medium;
   }
   &__grid {
-    @apply w-full grid gap-2.5 pr-4 pl-4;
+    @apply w-full grid gap-2.5;
 
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 </style>
