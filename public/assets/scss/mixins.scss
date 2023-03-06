@@ -1,4 +1,4 @@
-$mainBlue: #0569FF;
+$mainBlue: #0569ff;
 $mainBlueOpacited: rgba(5, 105, 255, 0.42);
 $mainBlueDark: #0454cc;
 
@@ -9,5 +9,6 @@ $mainBlueDark: #0454cc;
 @mixin smallBtn {
   padding: 0.8rem 1.5rem;
   border-radius: 3rem;
+  height: fit-content;
   @include transition-fast();
 }

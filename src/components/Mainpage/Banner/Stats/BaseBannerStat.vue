@@ -17,7 +17,6 @@ defineProps<IProps>();
 <style lang="scss" scoped>
 .stat {
   &__item {
-    
     min-height: 6rem;
     @apply flex gap-medium items-center justify-between text-white text-2xl w-full;
   }

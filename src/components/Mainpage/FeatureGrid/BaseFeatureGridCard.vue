@@ -32,16 +32,15 @@ defineProps<IProps>();
     @apply w-8 h-8 object-cover;
 
     @include ltPhoneMedium {
-        @apply w-12 h-12;
+      @apply w-12 h-12;
     }
   }
 
   &__text {
-    @apply text-lg;
-    max-width: 60%;
+    @apply text-base;
 
     @include ltPhoneMedium {
-        @apply text-2xl font-semibold;
+      @apply text-xl font-semibold;
     }
   }
 }

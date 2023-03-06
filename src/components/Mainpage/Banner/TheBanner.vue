@@ -1,5 +1,5 @@
 <template>
-  <section class="banner__wrapper">
+  <section class="banner__wrapper mt-section">
     <div class="banner__inner container">
       <div class="banner__inner-left">
         <h2 class="section-title">
@@ -16,7 +16,6 @@
         <div class="banner__inner-left__bottom">
           <p class="banner__inner-left__bottom-text">
             для начала пользования сервисом, пройдите бесплатную регистрацию.
-            <br />
             это займет не более одной минуты!
           </p>
 
@@ -68,11 +67,11 @@ import TheBannerStats from "./Stats/TheBannerStats.vue";
         @apply text-lg;
       }
       &__bottom {
-        @apply flex justify-between;
+        @apply flex justify-between items-center;
 
         &-text {
-          @apply font-bold uppercase;
-          max-width: min(54rem, 50%);
+          @apply font-bold text-sm uppercase;
+          max-width: min(54rem, 60%);
         }
       }
     }

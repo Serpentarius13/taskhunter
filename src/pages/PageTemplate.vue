@@ -9,4 +9,9 @@
 import TheNavbar from "@/components/Navbar/TheNavbar.vue";
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+main {
+  @apply flex flex-col;
+  gap: 5.6rem;
+}
+</style>

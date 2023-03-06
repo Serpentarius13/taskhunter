@@ -11,7 +11,7 @@
 }
 
 @mixin ltPhoneMedium {
-  @media (max-width: 520px) {
+  @media (max-width: 600px) {
     @content;
   }
 }
@@ -23,7 +23,7 @@
 }
 
 @mixin ltTabletBig {
-  @media (max-width: 960px) {
+  @media (max-width: 1050px) {
     @content;
   }
 }
