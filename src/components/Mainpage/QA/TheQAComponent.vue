@@ -83,7 +83,7 @@ function handleSelect(ix: number) {
     }
 
     p {
-      @apply text-sm;
+      @apply text-sm max-w-[80%];
     }
   }
 

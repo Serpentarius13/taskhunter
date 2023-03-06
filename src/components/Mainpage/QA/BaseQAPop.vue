@@ -48,7 +48,7 @@ function handleClick(): void {
   &__qa {
     max-width: 36.1rem;
 
-    @apply relative;
+    @apply relative w-full;
   }
 
   &__top {
