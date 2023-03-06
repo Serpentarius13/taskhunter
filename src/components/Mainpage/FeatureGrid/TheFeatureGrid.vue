@@ -20,12 +20,12 @@ import BaseFeatureGridCard from "./BaseFeatureGridCard.vue";
 .feature {
   &__wrapper {
     @apply flex flex-col gap-medium;
-    @include sectionPadding;
+   
   }
   &__grid {
     @apply w-full grid gap-2.5;
 
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   }
 }
 </style>

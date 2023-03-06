@@ -31,7 +31,7 @@ const isPopular = true;
 
     min-height: 32.7rem;
 
-    box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+    @include shadowy;
   }
 
   &__top {

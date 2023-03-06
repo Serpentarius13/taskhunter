@@ -18,3 +18,7 @@ $mainGreen: #43b933;
 @mixin sectionPadding {
   @apply pr-4 pl-4;
 }
+
+@mixin shadowy {
+  box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+}
