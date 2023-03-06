@@ -1,5 +1,5 @@
 <template>
-  <nav class="container big nav__container">
+  <nav class="container-wrapper big nav__container">
     <div class="nav__left">
       <BaseNavLogo />
 
@@ -22,12 +22,13 @@ import TheNavLinks from "./Links/TheNavLinks.vue";
 <style lang="scss" scoped>
 .nav {
   &__container {
-    @apply flex justify-between py-[0.5rem];
+    @apply flex justify-between py-[0.5rem] px-1;
     min-height: 3.6rem;
+    
   }
 
   &__left {
-    @apply flex items-center gap-veryBig;
+    @apply flex items-center justify-start gap-[3%] flex-1;
   }
 }
 

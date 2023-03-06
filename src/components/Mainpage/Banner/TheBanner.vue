@@ -1,6 +1,6 @@
 <template>
   <section class="banner__wrapper mt-section">
-    <div class="banner__inner container">
+    <div class="banner__inner container-wrapper">
       <div class="banner__inner-left">
         <h2 class="section-title">
           TASKHUNTER - это сервис поиска потенциальных клиентов по определенным

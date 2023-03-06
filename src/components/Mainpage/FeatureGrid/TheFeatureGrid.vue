@@ -1,5 +1,5 @@
 <template>
-  <section class="feature__wrapper container">
+  <section class="feature__wrapper container-wrapper">
     <h2 class="section-title">Перехватываем следующие ниши и решения</h2>
     <div class="feature__grid">
       <BaseFeatureGridCard

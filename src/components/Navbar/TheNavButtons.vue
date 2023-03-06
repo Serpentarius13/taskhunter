@@ -13,7 +13,8 @@ import TheLoginLink from "../Links/TheLoginLink.vue";
 <style scoped lang="scss">
 .nav {
   &__buttons {
-    @apply flex items-center gap-medium;
+    @apply flex items-center justify-between;
+    width: clamp(27rem, 15vw, 31rem);
   }
 }
 </style>

@@ -64,6 +64,12 @@
   }
 }
 
+@mixin ltSemiBigDesktop {
+  @media (max-width: 1560px) {
+    @content;
+  }
+}
+
 @mixin gtBigDesktop {
   @media (min-width: 1800px) {
     @content;

@@ -1,5 +1,5 @@
 <template>
-  <section class="tariff__wrapper container">
+  <section class="tariff__wrapper container-wrapper">
     <h2 class="section-title">Наши цены и тарифы на использование сервиса</h2>
 
     <div class="tariff__grid">
