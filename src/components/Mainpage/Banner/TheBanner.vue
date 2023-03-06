@@ -11,17 +11,20 @@
           откликнувшихся фрилансеров и принять результат работы. Остальное мы
           берем на себя.
         </p>
+
+        <TheBannerStats class="small"/>
         <div class="banner__inner-left__bottom">
           <p class="banner__inner-left__bottom-text">
             для начала пользования сервисом, пройдите бесплатную регистрацию.
             <br />
             это займет не более одной минуты!
           </p>
+
           <TheRegistrationLink />
         </div>
       </div>
 
-      <TheBannerStats />
+      <TheBannerStats class="big" />
     </div>
   </section>
 </template>
@@ -71,5 +74,18 @@ import TheBannerStats from "./Stats/TheBannerStats.vue";
       }
     }
   }
+}
+
+.big {
+    @include ltTabletBig {
+        display: none;
+    }
+}
+
+.small {
+    display: none;
+    @include ltTabletBig {
+        display: flex;
+    }
 }
 </style>
