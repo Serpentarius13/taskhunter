@@ -1,7 +1,8 @@
 <template>
-    <div>
+    <section class="qa__wrapper">
 
-    </div>
+
+    </section>
 </template>
 
 <script setup lang="ts">
@@ -10,4 +11,9 @@
 
 <style scoped lang="scss">
 
+.qa {
+    &__wrapper {
+        
+    }
+}
 </style>

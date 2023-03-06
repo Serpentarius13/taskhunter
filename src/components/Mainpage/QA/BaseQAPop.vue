@@ -1,6 +1,6 @@
 <template>
-  <div class="qa__wrapper">
-    <button class="qa__top" @click="handleClick">
+  <div class="qa__qa">
+    <button class="qa__top" @click="handleClick" :style="borderComputed">
       <span> Вопрос часто задаваемый </span>
       <div class="qa__top-img">
         <span :style="plusStyleComputed"> &plus; </span>
@@ -27,6 +27,10 @@ const plusStyleComputed = computed(() => {
   if (isShowingAnswer.value) return { transform: "rotate(360deg)" };
   else return { transform: "rotate(0deg)" };
 });
+const borderComputed = computed(() => {
+  if (isShowingAnswer.value) return { borderRadius: "1rem 1rem 0 0" };
+  else return { borderRadius: "1rem" };
+});
 
 function handleClick(): void {
   isShowingAnswer.value = !isShowingAnswer.value;
@@ -35,8 +39,10 @@ function handleClick(): void {
 
 <style lang="scss" scoped>
 .qa {
-  &__wrapper {
+  &__qa {
     max-width: 36.1rem;
+
+    @apply relative;
   }
 
   &__top {
@@ -45,6 +51,8 @@ function handleClick(): void {
     grid-template-columns: 3fr 0.1fr;
 
     @include shadowy;
+
+    @include transition-fast;
 
     padding: 2rem 1rem;
 
@@ -63,15 +71,17 @@ function handleClick(): void {
   }
 
   &__answer {
-    text-align: start;
-    padding-top: 1.4rem;
+    @apply text-start absolute w-full bottom-0 left-0 translate-y-full bg-white rounded-2xl rounded-t-none p-2;
+    @include shadowy;
+
+    padding: 1rem;
   }
 }
 
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-  transform: scale(0.5);
+  transform: translateY(90%);
 }
 
 .v-enter-active,
