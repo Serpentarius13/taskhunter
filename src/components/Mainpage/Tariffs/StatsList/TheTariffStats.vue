@@ -21,8 +21,10 @@ const stats: Stat[] = [
   &__stats {
     @apply flex flex-col items-center;
     gap: 1.8rem;
+
     li {
       @apply border-b-[1px] border-lightGray;
+
       &:last-child {
         border: 0;
       }

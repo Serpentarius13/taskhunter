@@ -35,6 +35,7 @@ module.exports = {
         verySmall: "1.5rem",
         medium: "5.5rem",
         mediumSmall: "2.8rem",
+        mediumBig: '6.2rem',
       },
       colors: {
         mainGreen: "#14A800",

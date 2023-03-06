@@ -1,13 +1,15 @@
 <template>
   <li class="tariff__stat text-normal-blue">
-    <span> {{ name }} </span> <span> {{ value }}</span>
+    <span> {{ name }} </span>
+    <span v-if="value"> {{ value }}</span>
+    <slot v-else />
   </li>
 </template>
 
 <script setup lang="ts">
 interface IProps {
   name: string;
-  value: string | number;
+  value?: string | number;
 }
 
 defineProps<IProps>();

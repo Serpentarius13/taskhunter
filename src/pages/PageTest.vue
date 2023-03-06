@@ -1,6 +1,6 @@
 <template>
   <div class="w">
-    <BaseTariffCard />
+    <TheTariffGrid />
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import TheBanner from "@/components/Mainpage/Banner/TheBanner.vue";
 import BaseFeatureGridCard from "@/components/Mainpage/FeatureGrid/BaseFeatureGridCard.vue";
 import TheFeatureGrid from "@/components/Mainpage/FeatureGrid/TheFeatureGrid.vue";
 import BaseTariffCard from "@/components/Mainpage/Tariffs/BaseTariffCard.vue";
+import TheTariffGrid from "@/components/Mainpage/Tariffs/TheTariffGrid.vue";
 </script>
 
 <style scoped>

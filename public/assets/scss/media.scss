@@ -16,8 +16,20 @@
   }
 }
 
+@mixin ltPhoneSmall {
+  @media (max-width: 450px) {
+    @content;
+  }
+}
+
 @mixin gtTabletBig {
   @media (min-width: 960px) {
+    @content;
+  }
+}
+
+@mixin ltTablet {
+  @media (max-width: 766px) {
     @content;
   }
 }
@@ -42,6 +54,12 @@
 
 @mixin ltDesktop {
   @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin ltMediumDesktop {
+  @media (max-width: 1340px) {
     @content;
   }
 }

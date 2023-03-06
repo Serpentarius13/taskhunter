@@ -19,7 +19,8 @@ import BaseFeatureGridCard from "./BaseFeatureGridCard.vue";
 <style scoped lang="scss">
 .feature {
   &__wrapper {
-    @apply flex flex-col gap-medium  pr-4 pl-4;
+    @apply flex flex-col gap-medium;
+    @include sectionPadding;
   }
   &__grid {
     @apply w-full grid gap-2.5;

@@ -2,6 +2,8 @@ $mainBlue: #0569ff;
 $mainBlueOpacited: rgba(5, 105, 255, 0.42);
 $mainBlueDark: #0454cc;
 
+$mainGreen: #43b933;
+
 @mixin transition-fast {
   transition: 0.2s all ease;
 }
@@ -11,4 +13,8 @@ $mainBlueDark: #0454cc;
   border-radius: 3rem;
   height: fit-content;
   @include transition-fast();
+}
+
+@mixin sectionPadding {
+  @apply pr-4 pl-4;
 }
