@@ -46,8 +46,6 @@ function handleClick(): void {
 <style lang="scss" scoped>
 .qa {
   &__qa {
-    max-width: 36.1rem;
-
     @apply relative w-full;
   }
 

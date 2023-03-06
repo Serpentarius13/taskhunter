@@ -59,7 +59,7 @@
 }
 
 @mixin ltMediumDesktop {
-  @media (max-width: 1340px) {
+  @media (max-width: 1420px) {
     @content;
   }
 }

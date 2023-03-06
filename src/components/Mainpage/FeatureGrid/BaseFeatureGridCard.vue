@@ -22,7 +22,7 @@ defineProps<IProps>();
 
     max-width: 36rem;
 
-    @include ltPhoneMedium {
+    @include ltTablet {
       max-width: 100%;
       @apply justify-between p-8;
     }
@@ -31,7 +31,7 @@ defineProps<IProps>();
   &__icon {
     @apply w-8 h-8 object-cover;
 
-    @include ltPhoneMedium {
+    @include ltTablet {
       @apply w-12 h-12;
     }
   }
@@ -39,8 +39,11 @@ defineProps<IProps>();
   &__text {
     @apply text-base;
 
+    @include ltTablet {
+      @apply text-lg font-semibold;
+    }
     @include ltPhoneMedium {
-      @apply text-xl font-semibold;
+      @apply text-xl;
     }
   }
 }

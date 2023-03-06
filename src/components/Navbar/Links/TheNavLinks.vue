@@ -22,13 +22,7 @@ const links: TLink[] = [
 <style lang="scss" scoped>
 .nav {
   &__links {
-    @apply flex items-center gap-medium text-mainBlue;
-
-    @include ltSemiBigDesktop {
-      gap: 1rem;
-
-      @apply justify-between;
-    }
+    @apply flex items-center  text-mainBlue;
   }
 }
 </style>

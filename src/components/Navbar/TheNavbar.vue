@@ -24,11 +24,19 @@ import TheNavLinks from "./Links/TheNavLinks.vue";
   &__container {
     @apply flex justify-between py-[0.5rem] px-1;
     min-height: 3.6rem;
-    
   }
 
   &__left {
     @apply flex items-center justify-start gap-[3%] flex-1;
+  }
+
+  &__links {
+    @apply gap-medium;
+    @include ltSemiBigDesktop {
+      gap: 1rem;
+
+      @apply justify-between;
+    }
   }
 }
 

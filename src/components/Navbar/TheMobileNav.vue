@@ -14,7 +14,12 @@
     </div>
 
     <label for="burger-menu" class="nav__burger">
-      <input type="checkbox" id="burger-menu" @change="handleMenu" />
+      <input
+        type="checkbox"
+        id="burger-menu"
+        @change="handleMenu"
+        ref="inputRef"
+      />
       <span />
       <span />
       <span />
@@ -30,6 +35,8 @@ import TheLoginLink from "../Links/TheLoginLink.vue";
 import TheRegistrationLink from "../Links/TheRegistrationLink.vue";
 const isMenuShowing = ref<boolean>(false);
 
+const inputRef = ref<HTMLInputElement | null>();
+
 const menuStyle = computed<{ transform: string }>(() => {
   if (isMenuShowing.value) return { transform: "translateX(0)" };
   else return { transform: "translateX(-150vw)" };
@@ -41,6 +48,7 @@ function handleMenu(): void {
 
 function handleClose(): void {
   isMenuShowing.value = false;
+  inputRef.value.checked = false;
 }
 </script>
 
@@ -69,7 +77,7 @@ function handleClose(): void {
         min-width: 20rem;
 
         &-link {
-          @apply text-white  flex-col;
+          @apply text-white  flex-col gap-small;
         }
 
         div button {
@@ -78,8 +86,8 @@ function handleClose(): void {
         }
 
         div {
-            @apply flex flex-col;
-            gap: 0.5rem;
+          @apply flex flex-col;
+          gap: 0.5rem;
         }
       }
     }
