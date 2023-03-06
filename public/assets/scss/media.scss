@@ -10,6 +10,12 @@
   }
 }
 
+@mixin ltPhoneMedium {
+  @media (max-width: 520px) {
+    @content;
+  }
+}
+
 @mixin gtTabletBig {
   @media (min-width: 960px) {
     @content;

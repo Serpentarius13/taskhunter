@@ -30,6 +30,10 @@ module.exports = {
         mainBlue: "#0569FF",
         mainBlueDark: "#0454cc",
       },
+
+      padding: {
+        section: '5.6rem'
+      }
     },
   },
   plugins: [],

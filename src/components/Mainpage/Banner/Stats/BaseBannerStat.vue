@@ -1,7 +1,7 @@
 <template>
   <li class="stat__item">
     <p class="stat__text">{{ name }}</p>
-    <p class="stat__count">{{ count }}</p>
+    <span class="stat__count">{{ count }}</span>
   </li>
 </template>
 

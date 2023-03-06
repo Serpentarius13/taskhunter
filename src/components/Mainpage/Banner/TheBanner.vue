@@ -1,8 +1,8 @@
 <template>
   <section class="banner__wrapper">
-    <div class="banner__inner">
+    <div class="banner__inner container">
       <div class="banner__inner-left">
-        <h2 class="banner__inner-left-title">
+        <h2 class="section-title">
           TASKHUNTER - это сервис поиска потенциальных клиентов по определенным
           тематикам
         </h2>
@@ -12,7 +12,7 @@
           берем на себя.
         </p>
 
-        <TheBannerStats class="small"/>
+        <TheBannerStats class="small" />
         <div class="banner__inner-left__bottom">
           <p class="banner__inner-left__bottom-text">
             для начала пользования сервисом, пройдите бесплатную регистрацию.
@@ -45,7 +45,6 @@ import TheBannerStats from "./Stats/TheBannerStats.vue";
 
   &__inner {
     @apply flex w-full items-center justify-between text-white gap-mediumSmall;
-    max-width: min(80vw, 150rem);
 
     @include ltTabletBig {
       @apply flex-col p-8 items-start;
@@ -55,10 +54,8 @@ import TheBannerStats from "./Stats/TheBannerStats.vue";
       @apply flex flex-col gap-mediumSmall;
       max-width: 73.7rem;
 
-      &-title {
-        @apply text-3xl text-medium font-bold;
-
-        line-height: 1.2;
+      h2 {
+        @apply text-white;
       }
 
       &-subtitle {
@@ -77,15 +74,15 @@ import TheBannerStats from "./Stats/TheBannerStats.vue";
 }
 
 .big {
-    @include ltTabletBig {
-        display: none;
-    }
+  @include ltTabletBig {
+    display: none;
+  }
 }
 
 .small {
-    display: none;
-    @include ltTabletBig {
-        display: flex;
-    }
+  display: none;
+  @include ltTabletBig {
+    display: flex;
+  }
 }
 </style>

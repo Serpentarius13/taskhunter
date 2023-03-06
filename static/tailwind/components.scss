@@ -26,4 +26,14 @@
       @apply bg-mainBlueDark;
     }
   }
+
+  .section-title {
+    @apply text-3xl text-medium font-bold;
+
+    line-height: 1.2;
+  }
+
+  .section {
+    @apply p-4 pt-section pb-section;
+  }
 }
