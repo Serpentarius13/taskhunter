@@ -9,6 +9,7 @@ $mainGreen: #43b933;
 }
 
 @mixin smallBtn {
+  @apply text-white;
   padding: 0.8rem 1.5rem;
   border-radius: 3rem;
   height: fit-content;
@@ -25,4 +26,28 @@ $mainGreen: #43b933;
 
 @mixin shadowy {
   box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+@mixin blueBtn {
+  @apply bg-mainBlue;
+
+  &:hover {
+    @apply bg-mainBlueLight;
+  }
+
+  &:active {
+    @apply bg-mainBlueDark;
+  }
+}
+
+@mixin greenBtn {
+  @apply bg-mainGreen;
+
+  &:hover {
+    @apply bg-mainGreenLight;
+  }
+
+  &:active {
+    @apply bg-mainGreenDark;
+  }
 }

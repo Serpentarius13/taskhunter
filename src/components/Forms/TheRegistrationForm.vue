@@ -12,6 +12,8 @@
     />
     <BaseTextInput v-model="email" label="E-mail" placeholder="Info@email.ru" />
     <BaseTextInput v-model="password" label="Пароль" placeholder="______" />
+
+    <button type="submit" class="formBtn-blue">Зарегестрироваться</button>
   </form>
 </template>
 
@@ -32,5 +34,9 @@ const password = ref("");
     gap: 1.7rem;
     max-width: 43.6rem;
   }
+}
+
+.formBtn-blue {
+    margin-top: 2rem;
 }
 </style>

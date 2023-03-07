@@ -1,30 +1,30 @@
 @layer components {
   .smallBtn-green {
     @include smallBtn();
-
-    @apply bg-mainGreen;
-
-    &:hover {
-      @apply bg-mainGreenLight;
-    }
-
-    &:active {
-      @apply bg-mainGreenDark;
-    }
+    @include greenBtn;
   }
 
   .smallBtn-blue {
     @include smallBtn();
 
-    @apply bg-mainBlue;
+    @include blueBtn();
+  }
 
-    &:hover {
-      @apply bg-mainBlueLight;
-    }
+  .formBtn-blue {
+    @include smallBtn();
 
-    &:active {
-      @apply bg-mainBlueDark;
-    }
+    @include blueBtn();
+
+    @apply font-bold text-base text-center w-full rounded-none;
+    padding: 1.2rem 0;
+  }
+
+  .formBtn-green {
+    @include smallBtn();
+
+    @include greenBtn();
+    @apply font-normal text-sm text-center w-full rounded-none;
+    padding: 1.4rem 0;
   }
 
   .section-title {
@@ -35,7 +35,5 @@
 
   .text-normal-blue {
     @apply text-base text-mainBlue font-bold;
-
-  
   }
 }
