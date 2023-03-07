@@ -3,10 +3,12 @@
   <main>
     <slot />
   </main>
+  <TheFooter />
 </template>
 
 <script setup lang="ts">
 import TheNavbar from "@/components/Navbar/TheNavbar.vue";
+import TheFooter from "@/components/Footer/TheFooter.vue";
 </script>
 
 <style lang="scss" scoped>
