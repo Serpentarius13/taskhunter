@@ -1,19 +1,22 @@
 <template>
   <div class="w">
-    <TheFooter />
+    <PageLogin/> 
   </div>
 </template>
 
 <script setup lang="ts">
-import BaseFooterIcon from "@/components/Footer/BaseFooterIcon.vue";
-import TheFooter from "@/components/Footer/TheFooter.vue";
-import TheBanner from "@/components/Mainpage/Banner/TheBanner.vue";
-import BaseFeatureGridCard from "@/components/Mainpage/FeatureGrid/BaseFeatureGridCard.vue";
-import TheFeatureGrid from "@/components/Mainpage/FeatureGrid/TheFeatureGrid.vue";
-import BaseQAPop from "@/components/Mainpage/QA/BaseQAPop.vue";
-import TheQAComponent from "@/components/Mainpage/QA/TheQAComponent.vue";
-import BaseTariffCard from "@/components/Mainpage/Tariffs/BaseTariffCard.vue";
-import TheTariffGrid from "@/components/Mainpage/Tariffs/TheTariffGrid.vue";
+import BaseLoginSkeleton from "@/components/BaseLoginSkeleton.vue";
+import BaseTextInput from "@/components/Forms/Inputs/BaseTextInput.vue";
+import TheLoginForm from "@/components/Forms/TheLoginForm.vue";
+import { ref, watchEffect } from "vue";
+import PageRegistration from "./PageRegistration.vue";
+import PageLogin from "./PageLogin.vue";
+
+const valueRef = ref("");
+
+watchEffect(() => {
+  console.log(valueRef.value);
+});
 </script>
 
 <style scoped>

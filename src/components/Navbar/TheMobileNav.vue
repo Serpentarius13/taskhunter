@@ -67,7 +67,7 @@ function handleClose(): void {
       @apply flex flex-col gap-veryBig;
     }
     &-links {
-      @apply bg-gray-500 bg-opacity-40 fixed top-0 w-full h-full overflow-hidden z-20;
+      @apply bg-gray-500 bg-opacity-40 fixed top-0 left-0 w-full h-full overflow-hidden z-20;
       @include transition-fast;
 
       &__link {

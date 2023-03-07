@@ -3,6 +3,7 @@
     img="/img/icons/registration.svg"
     text="Регистрация"
     class="smallBtn-green"
+    toElement="/registration"
   />
 </template>
 

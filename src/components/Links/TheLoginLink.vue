@@ -3,6 +3,7 @@
     img="/img/icons/login.svg"
     text="Войти"
     class="smallBtn-blue"
+    toElement="/login"
   />
 </template>
 

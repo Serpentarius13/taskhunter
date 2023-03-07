@@ -15,5 +15,7 @@ import TheFooter from "@/components/Footer/TheFooter.vue";
 main {
   @apply flex flex-col;
   gap: 5.6rem;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 </style>
