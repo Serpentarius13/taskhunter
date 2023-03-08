@@ -9,6 +9,7 @@
       v-model="password"
       label="Введите ваш пароль"
       placeholder="______"
+      type="password"
     />
   </form>
 </template>
