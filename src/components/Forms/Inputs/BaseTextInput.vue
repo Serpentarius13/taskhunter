@@ -8,13 +8,20 @@
         :placeholder="placeholder"
       />
 
-      <button @click.capture.prevent.stop="handleInputType" v-if="props.type == 'password'">
+      <button
+        @click.capture.prevent.stop="handleInputType"
+        v-if="props.type == 'password'"
+      >
         <img
-          src="/img/tariff-bg.jpg"
+          src="/img/icons/eye.svg"
           alt="Иконка открытого глаза"
           v-if="isPasswordComputed"
         />
-        <img src="/img/banner-bg.jpg" alt="Иконка закрытого глаза" v-else />
+        <img
+          src="/img/icons/eye-closed.svg"
+          alt="Иконка закрытого глаза"
+          v-else
+        />
       </button>
     </div>
   </div>
@@ -60,12 +67,16 @@ function handleInputType() {
     max-height: 5rem;
 
     input {
-      @apply w-full h-full  outline-none border-[1px] border-mainBlue bg-white text-sm;
+      @apply w-full h-full  outline-none border-[2px] border-mainBlue bg-white text-sm;
 
       padding: 1.1rem 1.6rem;
 
+      &:placeholder-shown {
+        @apply border-[1px];
+      }
+
       &:focus {
-        @apply border-[2px];
+        @apply border-[2px]
       }
     }
     label {
@@ -78,8 +89,7 @@ function handleInputType() {
 
     img {
       @apply absolute object-cover right-5 bottom-1/2 translate-y-1/2;
-      max-width: 2rem;
-      height: 2rem;
+      max-width: 2.4rem;
     }
   }
 }

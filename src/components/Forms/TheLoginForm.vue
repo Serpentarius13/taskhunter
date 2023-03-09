@@ -1,5 +1,5 @@
 <template>
-  <form class="login__form">
+  <form class="login__form" @submit.prevent="handleSubmit">
     <BaseTextInput
       v-model="phoneOrEmail"
       label="Телефон или почта"
@@ -22,12 +22,20 @@
   </form>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import BaseTextInput from "./Inputs/BaseTextInput.vue";
+import { useField } from "vee-validate";
+import useToastedForm from "@/features/composables/useToastedForm";
+import loginZod from "@/constants/types/zod/loginZod";
 
-const phoneOrEmail = ref("");
-const password = ref("");
+const validate = useToastedForm(loginZod, {
+  phoneOrEmail: "",
+  password: "",
+});
+
+const { value: phoneOrEmail } = useField<string>("phoneOrEmail");
+const { value: password } = useField<string>("password");
 </script>
 
 <style lang="scss" scoped>

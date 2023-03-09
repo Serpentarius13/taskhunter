@@ -1,3 +1,4 @@
+
 <template>
   <BaseFormComponent :onSubmit="onSubmit" class="flex-col md:flex-row">
     <BaseRadioButton
@@ -10,6 +11,8 @@
 </template>
 
 <script setup lang="ts">
+//@ts-nocheck
+
 import BaseFormComponent from "@/components/Form/BaseFormComponent.vue";
 import BaseRadioButton from "@/components/Inputs/BaseRadioButton.vue";
 import useToastedForm from "@/composables/useToastedForm";
@@ -25,11 +28,12 @@ import { daysRef } from "@/utils/collections";
 
 const emojis = ["😸", "😼", "🙀", "😿", "😾"];
 
+
+const loadStore = useLoadingStore();
 const validate = useToastedForm(startDay, {
   mood: emojis[0],
 });
 
-const loadStore = useLoadingStore();
 
 const { value: emojiValue } = useField<string>("mood");
 
