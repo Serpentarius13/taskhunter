@@ -9,6 +9,7 @@
       v-model="phone"
       label="Номер телефона"
       placeholder="+7 (____) ___.__.__"
+      type="password"
     />
     <BaseTextInput v-model="email" label="E-mail" placeholder="Info@email.ru" />
     <BaseTextInput v-model="password" label="Пароль" placeholder="______" />

@@ -8,7 +8,7 @@
         :placeholder="placeholder"
       />
 
-      <button @click="handleInputType" v-if="props.type == 'password'">
+      <button @click.capture.prevent.stop="handleInputType" v-if="props.type == 'password'">
         <img
           src="/img/tariff-bg.jpg"
           alt="Иконка открытого глаза"

@@ -3,7 +3,10 @@ import { useField, useForm } from "vee-validate";
 import { toFormValidator } from "@vee-validate/zod";
 import { z } from "zod";
 
-export default (schema: z.ZodObject<unkown>, initialValues: Record<string, unkown>) => {
+export default (
+  schema: z.ZodObject<unkown>,
+  initialValues: Record<string, unkown>
+) => {
   const toast = useToast();
   const zodSchema = toFormValidator(schema);
 
