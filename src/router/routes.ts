@@ -1,3 +1,5 @@
+import PageLoginVue from "@/pages/PageLogin.vue";
+import PageRegistrationVue from "@/pages/PageRegistration.vue";
 import { RouteMeta } from "vue-router";
 
 interface IRoute {
@@ -16,12 +18,12 @@ const routes: IRoute[] = [
   },
   {
     path: "/login",
-    component: () => import("@/pages/PageLogin.vue"),
+    component: () => PageLoginVue,
     name: "login",
   },
   {
     path: "/registration",
-    component: () => import("@/pages/PageRegistration.vue"),
+    component: () => PageRegistrationVue,
     name: "Registration",
   },
 ];

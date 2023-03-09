@@ -1,5 +1,6 @@
 import TUser, { TTokenUser } from "@/constants/types/user";
 import { defineStore } from "pinia";
+import { useToast } from "vue-toastification";
 
 interface IUserStore {
   user: null | TUser;
@@ -19,6 +20,7 @@ export default defineStore("user-store", {
   }),
   actions: {
     async login(formData: TLoginData | {} = {}): Promise<void> {
+      if (this.isLoading) return;
       try {
         this.isLoading = true;
 
@@ -39,10 +41,16 @@ export default defineStore("user-store", {
       } catch (error) {
         this.isLoading = false;
         this.isError = true;
+
+        const toast = useToast();
+
+        toast.error("Произошла ошибка при входе, повторите попытку позднее");
       }
     },
 
     async register(formData: TRegisterData): Promise<void> {
+      if (this.isLoading) return;
+
       try {
         this.isLoading = true;
 
@@ -57,12 +65,25 @@ export default defineStore("user-store", {
       } catch (error) {
         this.isLoading = false;
         this.isError = true;
+        const toast = useToast();
+
+        toast.error(
+          "Произошла ошибка при регистрации, повторите попытку позднее"
+        );
       }
     },
   },
   getters: {
-    user(state) {
+    userGetter(state) {
       return state.user;
+    },
+
+    isLoadingGetter(state) {
+      return state.isLoading;
+    },
+
+    isErrorGetter(state) {
+      return state.isError;
     },
   },
 });

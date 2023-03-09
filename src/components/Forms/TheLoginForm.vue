@@ -1,7 +1,7 @@
 <template>
   <form class="login__form" @submit.prevent="handleSubmit">
     <BaseTextInput
-      v-model="phoneOrEmail"
+      v-model="username"
       label="Телефон или почта"
       placeholder="+79006008080"
     />
@@ -13,7 +13,13 @@
     />
 
     <div class="login__buttons">
-      <button class="formBtn-blue btn" type="submit">Войти</button>
+      <button
+        class="formBtn-blue btn"
+        type="submit"
+        :disabled="userStore.isLoadingGetter"
+      >
+        Войти
+      </button>
       <button class="formBtn-green" type="button">Забыли пароль?</button>
       <router-link class="formBtn-green" to="/registration">
         Зарегестрироваться
@@ -23,19 +29,31 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import BaseTextInput from "./Inputs/BaseTextInput.vue";
 import { useField } from "vee-validate";
 import useToastedForm from "@/features/composables/useToastedForm";
 import loginZod from "@/constants/types/zod/loginZod";
+import useUserStore from "@/store/useUserStore";
 
-const validate = useToastedForm(loginZod, {
-  phoneOrEmail: "",
-  password: "",
-});
+const initialValues = { username: "", password: "" };
 
-const { value: phoneOrEmail } = useField<string>("phoneOrEmail");
+const validate = useToastedForm(loginZod, initialValues);
+
+const { value: username } = useField<string>("username");
 const { value: password } = useField<string>("password");
+
+const userStore = useUserStore();
+
+async function handleSubmit(): Promise<void> {
+  try {
+    const isValid = await validate();
+
+    if (!isValid) return;
+    userStore.login({ username: username.value, password: password.value });
+  } catch (error) {
+    console.error(error);
+  }
+}
 </script>
 
 <style lang="scss" scoped>

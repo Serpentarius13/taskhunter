@@ -1,9 +1,4 @@
-import loginZod from "@/constants/types/zod/loginZod";
 import createApi from ".";
-
-import axios from "axios";
-
-import { z } from "zod";
 
 import TUser, { TTokenUser } from "@/constants/types/user";
 
@@ -16,7 +11,7 @@ class UserAuth {
 
   async register(formData: TRegisterData): Promise<string> {
     try {
-      const { data } = await this.instance.post("/register", formData);
+      const { data } = await this.instance.post("/user/register", formData);
 
       return data as string;
     } catch (error) {
@@ -27,7 +22,7 @@ class UserAuth {
 
   async login(formData: TLoginData = {}): Promise<TUser | TTokenUser> {
     try {
-      const { data } = await this.instance.post("/login", formData);
+      const { data } = await this.instance.post("/user/login", formData);
 
       return data as TUser | TTokenUser;
     } catch (error) {

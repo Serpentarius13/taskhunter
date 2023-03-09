@@ -1,15 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 
-const backendURL = import.meta.env.BACKEND;
+const backendURL = import.meta.env.VITE_API_BACKEND;
 
-import { getAuthCookie } from '@/features/services/cookies/cookies';
+import { getAuthCookie } from "@/features/services/cookies/cookies";
 
 const token = getAuthCookie();
 const createApi = (isAuth: boolean) =>
   axios.create({
     baseURL: backendURL,
     headers: {
-      Authorization: isAuth && token ? `Bearer ${token}` : '',
+      Authorization: isAuth && token ? `Bearer ${token}` : "",
     },
   });
 

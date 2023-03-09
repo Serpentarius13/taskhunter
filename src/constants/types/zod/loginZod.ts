@@ -4,7 +4,7 @@ const loginZod = z.object({
   username: z
     .string()
     .regex(
-      /^(?:\+7|8|7|+8)?\d{10}$|^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      /^(?:\+7|8)?\d{0,15}$|^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/,
       "Логин должен быть либо номером телефона, либо адресом электронной почты, которые вы использовали при регистрации"
     ),
   password: z
@@ -16,8 +16,6 @@ const loginZod = z.object({
     ),
 });
 
-export default loginZod
-
+export default loginZod;
 
 export type TLoginData = z.infer<typeof loginZod> | {};
-
