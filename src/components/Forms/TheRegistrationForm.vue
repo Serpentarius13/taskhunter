@@ -12,7 +12,7 @@
     />
     <BaseTextInput
       v-model="email"
-      label="Е-емейл"
+      label="Е-мейл"
       placeholder="example@mail.ru"
     />
     <BaseTextInput
@@ -32,10 +32,12 @@ import { useField } from "vee-validate";
 import useToastedForm from "@/features/composables/useToastedForm";
 import registerZod from "@/constants/types/zod/registerZod";
 import useUserStore from "@/store/useUserStore";
+import { watchEffect } from "vue";
+import TUser from "@/constants/types/user";
 
 const initialValues = { name: "", password: "", email: "", phone: "" };
 
-const validate = useToastedForm(registerZod, initialValues);
+const { validate, resetForm } = useToastedForm(registerZod, initialValues);
 
 const { value: name } = useField<string>("name");
 const { value: phone } = useField<string>("phone");
@@ -49,13 +51,18 @@ async function handleSubmit(): Promise<void> {
     const isValid = await validate();
 
     if (!isValid) return;
-    userStore.register({
+
+    const user: TUser = {
       name: name.value,
       password: password.value,
       email: email.value,
       phone: phone.value,
-    });
+    };
+    await userStore.register(user);
+
+    resetForm();
   } catch (error) {
+    resetForm();
     console.error(error);
   }
 }

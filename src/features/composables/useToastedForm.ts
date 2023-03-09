@@ -10,7 +10,7 @@ export default (
   const toast = useToast();
   const zodSchema = toFormValidator(schema);
 
-  const { validate: runValidator } = useForm({
+  const { validate: runValidator, resetForm } = useForm({
     validationSchema: zodSchema,
     initialValues: initialValues,
     validateOnMount: false,
@@ -28,13 +28,14 @@ export default (
         }
         return false;
       } else {
+       
         return true;
       }
     } catch (error) {
       console.error(error);
-      throw new Error(error)
+      throw new Error(error);
     }
   };
 
-  return validate;
+  return { validate, resetForm };
 };

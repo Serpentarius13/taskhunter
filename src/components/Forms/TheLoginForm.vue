@@ -37,7 +37,7 @@ import useUserStore from "@/store/useUserStore";
 
 const initialValues = { username: "", password: "" };
 
-const validate = useToastedForm(loginZod, initialValues);
+const {validate} = useToastedForm(loginZod, initialValues);
 
 const { value: username } = useField<string>("username");
 const { value: password } = useField<string>("password");
@@ -49,7 +49,9 @@ async function handleSubmit(): Promise<void> {
     const isValid = await validate();
 
     if (!isValid) return;
-    userStore.login({ username: username.value, password: password.value });
+    await userStore.login({ username: username.value, password: password.value });
+
+
   } catch (error) {
     console.error(error);
   }

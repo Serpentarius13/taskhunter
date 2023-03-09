@@ -6,6 +6,7 @@
         :type="localTypeRef"
         @input="handleChange"
         :placeholder="placeholder"
+        :value="modelValue"
       />
 
       <button

@@ -19,8 +19,12 @@ export default defineStore("user-store", {
     isLoading: false,
   }),
   actions: {
-    async login(formData: TLoginData | {} = {}): Promise<void> {
+    async login(
+      formData: TLoginData | {} = {},
+      afterRegister?: boolean
+    ): Promise<void> {
       if (this.isLoading) return;
+      const toast = useToast();
       try {
         this.isLoading = true;
 
@@ -37,12 +41,14 @@ export default defineStore("user-store", {
           this.user = userData;
 
           this.isLoading = false;
+          const message = afterRegister
+            ? "Вы успешно зарегестрировались!"
+            : "Вход выполнен успешно!";
+          toast.success(message);
         }
       } catch (error) {
         this.isLoading = false;
         this.isError = true;
-
-        const toast = useToast();
 
         toast.error("Произошла ошибка при входе, повторите попытку позднее");
       }
@@ -51,7 +57,9 @@ export default defineStore("user-store", {
     async register(formData: TRegisterData): Promise<void> {
       if (this.isLoading) return;
 
+      const toast = useToast();
       try {
+        const toast = useToast();
         this.isLoading = true;
 
         const token = await authService.register(formData);
@@ -59,13 +67,12 @@ export default defineStore("user-store", {
         if (token) {
           this.isLoading = false;
           setAuthCookie(token);
-          this.login();
+          this.login({}, true);
           return;
         }
       } catch (error) {
         this.isLoading = false;
         this.isError = true;
-        const toast = useToast();
 
         toast.error(
           "Произошла ошибка при регистрации, повторите попытку позднее"

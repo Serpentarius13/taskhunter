@@ -2,6 +2,8 @@ interface IUser {
   email: string;
   username: string;
   phone: string;
+  name: string;
+  password: string;
 }
 
 type TUser = Partial<IUser>;
